@@ -66,6 +66,127 @@
     const getActivePlayer = () => activePlayer;
 
 
+
+
+
+    
+    let win = 0;
+    let winner = ""
+    const playRound = (row,column) => {
+        board.putMarker(row,column,getActivePlayer().marker)
+        
+        // for win condition
+        //player 1 wins
+        if((board.getBoard()[0][0].getValue()) === (board.getBoard()[0][1].getValue()) 
+        && (board.getBoard()[0][1].getValue()) === (board.getBoard()[0][2].getValue())
+        && (board.getBoard()[0][2].getValue()) === "X") {
+            win = 1
+            winner = player[0].name
+        }
+        else  if((board.getBoard()[1][0].getValue()) === (board.getBoard()[1][1].getValue()) 
+        && (board.getBoard()[1][1].getValue()) === (board.getBoard()[1][2].getValue())
+        && (board.getBoard()[1][2].getValue()) === "X") {
+            win = 1
+            winner = player[0].name
+        }
+        
+        else  if((board.getBoard()[2][0].getValue()) === (board.getBoard()[2][1].getValue()) 
+        && (board.getBoard()[2][1].getValue()) === (board.getBoard()[2][2].getValue())
+        && (board.getBoard()[2][2].getValue()) === "X") {
+            win = 1
+            winner = player[0].name
+        }
+        
+        else if((board.getBoard()[0][0].getValue()) === (board.getBoard()[1][1].getValue())
+        && (board.getBoard()[1][1].getValue()) === (board.getBoard()[2][2].getValue())
+        && (board.getBoard()[2][2].getValue() === "X")){
+            win = 1;
+            winner = player[0].name
+        }
+        else if((board.getBoard()[0][2].getValue()) === (board.getBoard()[1][1].getValue())
+        && (board.getBoard()[1][1].getValue()) === (board.getBoard()[2][0].getValue())
+        && (board.getBoard()[2][0].getValue()) === "X"){
+            win = 1;
+            winner = player[0].name
+        }
+        else if((board.getBoard()[0][0].getValue()) === (board.getBoard()[1][0].getValue())
+        && (board.getBoard()[1][0].getValue()) === (board.getBoard()[2][0].getValue())
+        && (board.getBoard()[2][0].getValue()) === "X"){
+            win = 1;
+            winner = player[0].name
+        }
+        else if((board.getBoard()[0][1].getValue()) === (board.getBoard()[1][1].getValue())
+        && (board.getBoard()[1][1].getValue()) === (board.getBoard()[2][1].getValue())
+        && (board.getBoard()[2][1].getValue()) === "X"){
+            win = 1;
+            winner = player[0].name
+        }
+        else if((board.getBoard()[0][2].getValue()) === (board.getBoard()[1][2].getValue())
+        && (board.getBoard()[1][2].getValue()) === (board.getBoard()[2][2].getValue())
+        && (board.getBoard()[2][2].getValue()) === "X"){
+            win = 1;
+            winner = player[0].name
+        }
+
+
+        else if((board.getBoard()[0][0].getValue()) === (board.getBoard()[0][1].getValue()) 
+        && (board.getBoard()[0][1].getValue()) === (board.getBoard()[0][2].getValue())
+        && (board.getBoard()[0][2].getValue()) === "O") {
+            win = 2
+            winner = player[1].name
+        }
+
+        else  if((board.getBoard()[1][0].getValue()) === (board.getBoard()[1][1].getValue()) 
+        && (board.getBoard()[1][1].getValue()) === (board.getBoard()[1][2].getValue())
+        && (board.getBoard()[1][2].getValue()) === "O") {
+            win = 2;
+            winner = player[1].name
+        }
+        
+        else  if((board.getBoard()[2][0].getValue()) === (board.getBoard()[2][1].getValue()) 
+        && (board.getBoard()[2][1].getValue()) === (board.getBoard()[2][2].getValue())
+        && (board.getBoard()[2][2].getValue()) === "O") {
+            win = 2;
+            winner = player[1].name
+        }
+        
+        else if((board.getBoard()[0][0].getValue()) === (board.getBoard()[1][1].getValue())
+        && (board.getBoard()[1][1].getValue()) === (board.getBoard()[2][2].getValue())
+        && (board.getBoard()[2][2].getValue() === "O")){
+            win = 2;
+            winner = player[1].name
+        }
+        else if((board.getBoard()[0][2].getValue()) === (board.getBoard()[1][1].getValue())
+        && (board.getBoard()[1][1].getValue()) === (board.getBoard()[2][0].getValue())
+        && (board.getBoard()[2][0].getValue()) === "O"){
+            win = 2;
+            winner = player[1].name
+        }
+
+        else if((board.getBoard()[0][0].getValue()) === (board.getBoard()[1][0].getValue())
+        && (board.getBoard()[1][0].getValue()) === (board.getBoard()[2][0].getValue())
+        && (board.getBoard()[2][0].getValue()) === "O"){
+            win = 2;
+            winner = player[1].name
+        }
+        else if((board.getBoard()[0][1].getValue()) === (board.getBoard()[1][1].getValue())
+        && (board.getBoard()[1][1].getValue()) === (board.getBoard()[2][1].getValue())
+        && (board.getBoard()[2][1].getValue()) === "O"){
+            win = 2;
+            winner = player[1].name
+        }
+        else if((board.getBoard()[0][2].getValue()) === (board.getBoard()[1][2].getValue())
+        && (board.getBoard()[1][2].getValue()) === (board.getBoard()[2][2].getValue())
+        && (board.getBoard()[2][2].getValue()) === "O"){
+            win = 2;
+            winner = player[1].name
+        }
+    
+
+        switchPlayerTurn();
+
+    }
+
     }
 
 
