@@ -29,4 +29,22 @@
             
     }
 
+    function cell(){
+        let value =  "";
+
+        const addMarker = (marker) => {
+            value = marker;
+        };
+
+        const getValue = () => value;
+
+        return {
+            addMarker,
+            getValue
+        }
+    }
+
+
+
+
 })();
