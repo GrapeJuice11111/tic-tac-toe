@@ -187,6 +187,15 @@
 
     }
 
+
+    return{
+        playRound,
+        getActivePlayer,
+        getBoard: board.getBoard,
+        win,
+        winner
+    };
+    
     }
 
 
