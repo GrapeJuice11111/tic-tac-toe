@@ -35,3 +35,35 @@ footer{
     background-color: #0c0a09;
     color: #9333ea;
 }
+
+.content{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 2px;
+    padding: 2px;
+    background-color: white;
+    
+  }
+
+  .turn{
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    color: #292524;
+    margin-top: 20px;
+  }
+
+
+button{
+    min-width: 100px;
+    min-height: 30px;
+    background-color: white;
+}

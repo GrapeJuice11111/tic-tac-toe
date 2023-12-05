@@ -240,7 +240,37 @@
             )
     }
     }
+
+    displayBoard.addEventListener("click", (e) => {
+        const selectedColumn = e.target.dataset.column
+        const selectedRow = e.target.dataset.row
+        
+        if(!selectedColumn) return;
+        if(!selectedRow) return;
+        
+        
+       
+        
+            game.playRound(selectedRow,selectedColumn);
+        
+            updateScreen();
+        
+        
+        });
+        
+        
+        updateScreen();
+        
+         
+        restart.addEventListener("click",gameTicTacToe)
+   
+            
+
+            
     }
+    
+    renderDisplay();
+   
 
 
 
