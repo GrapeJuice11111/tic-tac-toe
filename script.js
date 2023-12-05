@@ -195,7 +195,51 @@
         win,
         winner
     };
-    
+
+    }
+
+    function renderDisplay(){
+        const game = gameController();
+        const displayBoard = document.querySelector(".board")
+        const displayTurn = document.querySelector(".turn")
+        const restart = document.querySelector(".restart")
+        
+        
+        
+        const updateScreen = () => {
+            
+            displayBoard.textContent = "";
+
+            const board = game.getBoard();
+            const activePlayer = game.getActivePlayer();
+            
+
+            //not working as expected
+            if(game.win === 1 || game.win === 2){
+                console.log("win");
+                    displayBoard.textContent = ""
+                    displayTurn.textContent = `${game.winner} is the winner`
+     
+            }
+            else{
+            displayTurn.textContent = `${activePlayer.name}'s turn`
+
+            board.forEach((rows,indexRow) => { 
+                rows.forEach((cell,indexColumn) => {
+                const cellButton = document.createElement("button");
+                cellButton.classList.add("cell");
+
+                cellButton.dataset.row = indexRow
+                cellButton.dataset.column = indexColumn
+                cellButton.textContent = cell.getValue();
+                displayBoard.appendChild(cellButton)
+              
+            })
+        }
+            
+            )
+    }
+    }
     }
 
 
