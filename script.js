@@ -12,15 +12,21 @@
                 board[i].push(cell());  
             } 
         }
-        //we need a function to get a board
+        // to get the board latest instance
         const getBoard = () => board
 
-
-        
+            // func to set marker
+        const putMarker =  (row,column,player) => {
+            if(board[row][column].getValue() === ""){
+                board[row][column].addMarker(player)
+               
+            }
+            }
             
            
 
-     
+        return { getBoard, putMarker}
+            
     }
 
 })();
